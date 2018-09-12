@@ -36,7 +36,7 @@ class PlayingCard:
         self.suit = card_suit
 
 #function to create full deck
-
+##
 def create_deck():
 
     for suit in Suit:
