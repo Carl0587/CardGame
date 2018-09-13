@@ -74,10 +74,12 @@ def deal_war():
 create_deck()
 partial_deck=list(full_deck)
 deal_war()
-
+# This is the main part of the game, this section will check which card is the highest and will give the point to
+#the player that won the round
 for i in range(0, len(player1_cards)):
     play = input("Do You want to play? Y/N")
     if play in ("Y","y"):
+        #We used if statements to check for 3 conditions, player 1 wins, player 2 wins or if its a tie..
         if (player1_cards[i].card > player2_cards[i].card):
             player1_wins = player1_wins+1
             print("Player 1 wins the hand with ",player1_cards[i].card)
