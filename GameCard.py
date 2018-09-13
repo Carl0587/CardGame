@@ -6,6 +6,8 @@ full_deck = []
 partial_deck=[]
 player1_cards=[]
 player2_cards= []
+player1_wins =0
+player2_wins =0
 
 #card enum for playing cards
 class Card(IntEnum):
@@ -41,6 +43,7 @@ def create_deck():
 
     for suit in Suit:
         for card in Card:
+
             full_deck.append(PlayingCard(Card(card),Suit(suit)))
     return full_deck
 
@@ -76,11 +79,15 @@ for i in range(0, len(player1_cards)):
     play = input("Do You want to play? Y/N")
     if play in ("Y","y"):
         if (player1_cards[i].card > player2_cards[i].card):
+            player1_wins = player1_wins+1
             print("Player 1 wins the hand with ",player1_cards[i].card)
             print("Player 2 loses the hand with ",player2_cards[i].card)
+            print("Player 1 has ", player1_wins, "wins")
         if (player1_cards[i].card < player2_cards[i].card):
+            player2_wins = player2_wins + 1
             print("Player 2 wins the hand with ",player2_cards[i].card)
             print("Player 1 loses the hand with ",player1_cards[i].card)
+            print("Player 2 has ", player2_wins, "wins")
         else:
             print('war')
     else:break

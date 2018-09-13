@@ -33,4 +33,5 @@ hand()
 for i in range(13):
      for j in range(4):
          s,c = deal()
-         print(s+c)
+         print(c+s)
+
